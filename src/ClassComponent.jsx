@@ -3,7 +3,7 @@ import { Component } from "react";
 class ClassComponent extends Component{
     render(){
         return(
-            <h1>Component</h1>
+            <h1>Class-Component</h1>
         )
     }
 }
