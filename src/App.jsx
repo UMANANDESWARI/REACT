@@ -7,6 +7,7 @@ import FunctionComponent from './FunctionComponent'
 import FirstName from './FirstName'
 import LastName from './LastName'
 import Email from './Email'
+import PhoneNumber from './PhoneNumber'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       <FirstName/>
       <LastName />
       <Email />
+      <PhoneNumber />
     </>
   )
 }
