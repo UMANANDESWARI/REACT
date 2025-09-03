@@ -4,14 +4,20 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ClassComponent from './ClassComponent'
 import FunctionComponent from './FunctionComponent'
+import FirstName from './FirstName'
+import LastName from './LastName'
+import Email from './Email'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <ClassComponent />
-      <FunctionComponent />
+      {/* <ClassComponent /> */}
+      {/* <FunctionComponent /> */}
+      <FirstName/>
+      <LastName />
+      <Email />
     </>
   )
 }
