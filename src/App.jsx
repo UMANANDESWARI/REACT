@@ -10,6 +10,8 @@ import Email from './Email'
 import PhoneNumber from './PhoneNumber'
 import DOB from './DOB'
 import Gender from './Gender'
+import FormComponet from './FormComponent'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,12 +20,13 @@ function App() {
     <>
       {/* <ClassComponent /> */}
       {/* <FunctionComponent /> */}
-      <FirstName/>
+      {/* <FirstName/>
       <LastName />
       <Email />
       <PhoneNumber />
       <DOB />
-      <Gender />
+      <Gender /> */}
+      <FormComponet />
     </>
   )
 }
