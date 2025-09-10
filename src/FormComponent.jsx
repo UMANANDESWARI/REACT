@@ -1,5 +1,5 @@
 import React from "react";
-const FormComponet =() =>{
+const FormComponent =() =>{
 
     const SubmitClick = (event) => {
     console.log(`First Name: Your entered first name is `);
@@ -53,4 +53,4 @@ const FormComponet =() =>{
         </>
     )
 }
-export default FormComponet;
+export default FormComponent;

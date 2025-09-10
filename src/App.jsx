@@ -26,7 +26,7 @@ function App() {
       <PhoneNumber />
       <DOB />
       <Gender /> */}
-      <FormComponet />
+      {/* <FormComponet /> */} 
     </>
   )
 }
