@@ -4,10 +4,12 @@ import Component1 from './Component1'
 // import './index.css'
 import App from './App.jsx'
 // import CLASS from './Cards.jsx'
+import Routing from './Routing.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    {/* <App /> */}
+    <Routing />
     {/* <CLASS /> */}
   </StrictMode>,
 )

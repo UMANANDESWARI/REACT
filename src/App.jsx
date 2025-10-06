@@ -15,63 +15,64 @@ import FormComponet from './FormComponent'
 import Component1 from './Component1'
 import Component2 from './Component2'
 
-
 function App() {
-//searching data
-    const [data, setData] = useState([
-      {
-        RollNo : "23P31A0526"
-      },
-      {
-        RollNo : "23A91A0596"
-      },
-      {
-        RollNo : "23MH1A0556"
-      },
-      {
-        RollNo : "23P31A05H4"
-      },
-      {
-        RollNo : "23P31A1228"
-      },
-      {
-        RollNo : "23P31A56G7"
-      }
-    ])
-
-    const [QueryResult,setQueryResult] = useState(data);
-
-    const [UserQuery, setUserQuery] = useState("");
-
-    const Capture = (event) => {
-      setUserQuery(event.target.value);
-    };
-
-    useEffect(() => {
-      if (UserQuery === "") {
-        setQueryResult(data); 
-      } 
-      else {
-        const arr = data.filter((item) =>
-          item.RollNo.toLowerCase().includes(UserQuery.toLowerCase())
-        );
-        setQueryResult(arr);
-      }
-    }, [UserQuery, data]); 
-
-            return (
-            <>
-            <div className="parent">
-            <input type="text" placeholder="Search..." onChange={Capture} />
-            {QueryResult.map((ele, index) => (
-                <div key={index} className="card">
-                  {ele.RollNo}
-                </div>
-            ))}
-             </div>
-            </>
-        );
+  
 }
+//searching data
+    // const [data, setData] = useState([
+    //   {
+    //     RollNo : "23P31A0526"
+    //   },
+    //   {
+    //     RollNo : "23A91A0596"
+    //   },
+    //   {
+    //     RollNo : "23MH1A0556"
+    //   },
+    //   {
+    //     RollNo : "23P31A05H4"
+    //   },
+    //   {
+    //     RollNo : "23P31A1228"
+    //   },
+    //   {
+    //     RollNo : "23P31A56G7"
+    //   }
+    // ])
+
+    // const [QueryResult,setQueryResult] = useState(data);
+
+    // const [UserQuery, setUserQuery] = useState("");
+
+    // const Capture = (event) => {
+    //   setUserQuery(event.target.value);
+    // };
+
+    // useEffect(() => {
+    //   if (UserQuery === "") {
+    //     setQueryResult(data); 
+    //   } 
+    //   else {
+    //     const arr = data.filter((item) =>
+    //       item.RollNo.toLowerCase().includes(UserQuery.toLowerCase())
+    //     );
+    //     setQueryResult(arr);
+    //   }
+    // }, [UserQuery, data]); 
+
+    //         return (
+    //         <>
+    //         <div className="parent">
+    //         <input type="text" placeholder="Search..." onChange={Capture} />
+    //         {QueryResult.map((ele, index) => (
+    //             <div key={index} className="card">
+    //               {ele.RollNo}
+    //             </div>
+    //         ))}
+    //          </div>
+    //         </>
+    //     );
+
 
 
 // creating cards by using user entered data
