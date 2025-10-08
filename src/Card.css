@@ -1,11 +1,11 @@
-/* .parent{
+.parent{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-around;
 }
-.card{
+/* .card{
     width: 300px;
     height: 300px;
     display: flex;
@@ -16,12 +16,13 @@
     border-radius: 15px;
 } */
 
-.parent{
+/* .parent{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     gap: 20px;
 }
+*/
 .card{
     display: flex;
     width : 300px;
@@ -29,6 +30,7 @@
     align-items: center;
     padding: 20px;
     border: 2px solid black;
+    border-radius: 15px;
 }
 .bg-green{
     background-color: green;
@@ -36,7 +38,7 @@
 .bg-red{
     background-color: red;
 }
-/* .logo{
+.logo{
     display: flex;
     justify-content: center;
     width: 100%;
@@ -50,4 +52,4 @@
     display: flex;
     flex-direction: column;
     font-size: 20px;
-} */
+}

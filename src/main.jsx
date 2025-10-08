@@ -5,11 +5,16 @@ import Component1 from './Component1'
 import App from './App.jsx'
 // import CLASS from './Cards.jsx'
 import Routing from './Routing.jsx'
+import ProductCards from './ProductCards.jsx'
+import ImagePaths from './ImagePaths.jsx'
+import ImagePaths2 from './ImagePaths2.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     <Routing />
+    {/* < ImagePaths/> */}
+    {/* <ImagePaths2 /> */}
     {/* <CLASS /> */}
   </StrictMode>,
 )
