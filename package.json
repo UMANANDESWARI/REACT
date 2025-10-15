@@ -10,9 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "react": "^19.1.1",
+    "react-confetti": "^6.4.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.3"
+    "react-loader-spinner": "^7.0.3",
+    "react-router-dom": "^7.9.3",
+    "react-spinners": "^0.17.0",
+    "react-tilty": "^3.0.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
