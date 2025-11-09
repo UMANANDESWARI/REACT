@@ -1,0 +1,157 @@
+:root {
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #333;
+  --accent: #6C5CE7;
+}
+
+.dark-mode {
+  --bg: #1e1e2f;
+  --card-bg: #2c2c3e;
+  --text: #f0f0f0;
+  --accent: #00B894;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  margin-top: 30px;
+  padding: 8px 16px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: var(--bg);
+}
+
+.chart-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel {
+  width: 280px;
+  background-color: var(--card-bg);
+  padding: 20px;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.widget h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.action-btn {
+  padding: 8px 12px;
+  margin-right: 10px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: var(--card-bg);
+  padding: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.right-panel {
+  width: 280px;
+  padding: 20px;
+}
