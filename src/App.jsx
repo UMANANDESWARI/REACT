@@ -16,7 +16,6 @@ import Component1 from './Component1'
 import Component2 from './Component2'
 
 function App() {
-  
 }
 //searching data
     // const [data, setData] = useState([
