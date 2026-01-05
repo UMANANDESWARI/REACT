@@ -2,7 +2,7 @@ import { use, useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import  './Card.css'
+// import  './Card.css'
 import ClassComponent from './ClassComponent'
 import FunctionComponent from './FunctionComponent'
 import FirstName from './FirstName'
@@ -15,8 +15,152 @@ import FormComponet from './FormComponent'
 import Component1 from './Component1'
 import Component2 from './Component2'
 
-function App() {
+
+
+const API = "http://localhost:5000/students";
+
+export default function App() {
+  const [students, setStudents] = useState([]);
+  const [form, setForm] = useState({
+    name: "",
+    rollNo: "",
+    email: "",
+    phone: "",
+    department: ""
+  });
+
+  useEffect(() => {
+    loadStudents();
+  }, []);
+
+  const loadStudents = async () => {
+    const res = await fetch(API);
+    const data = await res.json();
+    setStudents(data);
+  };
+
+  const submit = async e => {
+    e.preventDefault();
+    await fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form)
+    });
+    setForm({ name: "", rollNo: "", email: "", phone: "", department: "" });
+    loadStudents();
+  };
+
+  const view = async id => {
+    const res = await fetch(`${API}/${id}`);
+    const s = await res.json();
+
+    alert(`
+      Name: ${s.name}
+      Roll No: ${s.rollNo}
+      Email: ${s.email}
+      Phone: ${s.phone}
+      Department: ${s.department}
+    `);
+
+    if (window.confirm("Edit student?")) edit(id, s);
+    if (window.confirm("Delete student?")) del(id);
+  };
+
+  const edit = async (id, s) => {
+    const updated = {
+      name: prompt("Name", s.name),
+      rollNo: prompt("Roll No", s.rollNo),
+      email: prompt("Email", s.email),
+      phone: prompt("Phone", s.phone),
+      department: prompt("Department", s.department)
+    };
+
+    await fetch(`${API}/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updated)
+    });
+    loadStudents();
+  };
+
+  const del = async id => {
+    await fetch(`${API}/${id}`, { method: "DELETE" });
+    loadStudents();
+  };
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h2>Student Form</h2>
+
+      <form onSubmit={submit}>
+        <input placeholder="Name" value={form.name}
+          onChange={e => setForm({ ...form, name: e.target.value })} /><br /><br />
+        <input placeholder="Roll No" value={form.rollNo}
+          onChange={e => setForm({ ...form, rollNo: e.target.value })} /><br /><br />
+        <input placeholder="Email" value={form.email}
+          onChange={e => setForm({ ...form, email: e.target.value })} /><br /><br />
+        <input placeholder="Phone" value={form.phone}
+          onChange={e => setForm({ ...form, phone: e.target.value })} /><br /><br />
+        <input placeholder="Department" value={form.department}
+          onChange={e => setForm({ ...form, department: e.target.value })} /><br /><br />
+
+        <button>Add</button>
+      </form>
+
+      <hr />
+
+      <h2>Student Cards</h2>
+      {students.map(s => (
+        <div key={s.id} style={{ border: "1px solid black", padding: 10, margin: 10 }}>
+          <b>{s.name}</b><br />
+          Roll No: {s.rollNo}<br /><br />
+          <button onClick={() => view(s.id)}>View</button>
+        </div>
+      ))}
+    </div>
+  );
 }
+
+
+
+
+
+
+// flop code using be
+// function App() {
+//   return (
+//     <div className="container">
+//       <form className="student-form">
+//         <h2>Student Details</h2>
+
+//         <label>Name</label>
+//         <input type="text" placeholder="Enter Name" />
+
+//         <label>Roll Number</label>
+//         <input type="text" placeholder="Enter Roll Number" />
+
+//         <label>Email</label>
+//         <input type="email" placeholder="Enter Email" />
+
+//         <label>Department</label>
+//         <input type="text" placeholder="Enter Department" />
+
+//         <label>College</label>
+//         <input type="text" placeholder="Enter College Name" />
+
+//         <button type="submit">Submit</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
 //searching data
     // const [data, setData] = useState([
     //   {
@@ -265,5 +409,3 @@ function App() {
   //     <Component2 /> */}
   //   </>
   // )
-
-export default App
