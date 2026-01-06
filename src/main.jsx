@@ -23,7 +23,7 @@ import FitnessDashboard from './FitnessDashboard.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Routing /> */}
     {/* < ImagePaths/> */}
     {/* <ImagePaths2 /> */}
@@ -39,6 +39,6 @@ createRoot(document.getElementById('root')).render(
     {/* <Typing_Task /> */}
     {/* < Dashboard/> */}
     {/* < Dashboard_Task/> */}
-    < FitnessDashboard/>
+    {/* < FitnessDashboard/> */}
   </StrictMode>,
 )
